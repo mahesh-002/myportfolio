@@ -1,20 +1,46 @@
-document.addEventListener("DOMContentLoaded", function() {
-    const sections = document.querySelectorAll(".animated-section");
-    sections.forEach(section => {
-        section.style.opacity = "0";
-        section.style.transform = "translateY(30px)";
-        section.style.transition = "all 0.6s ease-in-out";
-    });
+document.addEventListener("DOMContentLoaded", function () {
+    console.log("JavaScript Loaded Successfully!");
 
-    function revealSections() {
-        sections.forEach(section => {
-            if (section.getBoundingClientRect().top < window.innerHeight - 50) {
-                section.style.opacity = "1";
-                section.style.transform = "translateY(0)";
-            }
+    // Load More Certificates
+    const loadMoreBtn = document.getElementById("loadMoreCertificates");
+    
+    if (loadMoreBtn) {
+        loadMoreBtn.addEventListener("click", function () {
+            let newCertificate = document.createElement("div");
+            newCertificate.classList.add("certificate-box");
+            newCertificate.innerHTML = `
+                <h3>Advanced Web Development</h3>
+                <p>Issued by: Example Institute</p>
+                <p>Year: 2025</p>
+                <a href="#" target="_blank">View Certificate</a>
+            `;
+            document.querySelector(".certificate-container").appendChild(newCertificate);
         });
     }
 
-    window.addEventListener("scroll", revealSections);
-    revealSections(); 
+    // Smooth Scrolling for Internal Links
+    const links = document.querySelectorAll("a[href^='#']");
+    links.forEach(link => {
+        link.addEventListener("click", function (event) {
+            event.preventDefault();
+            const targetId = this.getAttribute("href").substring(1);
+            const targetElement = document.getElementById(targetId);
+
+            if (targetElement) {
+                window.scrollTo({
+                    top: targetElement.offsetTop - 50,
+                    behavior: "smooth"
+                });
+            }
+        });
+    });
+
+    // Dark Mode Toggle
+    const darkModeToggle = document.getElementById("darkModeToggle");
+    
+    if (darkModeToggle) {
+        darkModeToggle.addEventListener("click", function () {
+            document.body.classList.toggle("dark-mode");
+        });
+    }
 });

@@ -7,20 +7,88 @@
     <link rel="stylesheet" href="styles.css">
     <script defer src="script.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        :root {
+            --primary-color: #3DDC84;
+            --background-color: #121212;
+            --text-color: #E0E0E0;
+            --card-bg: #1E1E1E;
+        }
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: var(--background-color);
+            color: var(--text-color);
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            background: var(--card-bg);
+            color: var(--text-color);
+            padding: 15px;
+            text-align: center;
+        }
+        nav ul {
+            list-style: none;
+            padding: 0;
+        }
+        nav ul li {
+            display: inline;
+            margin: 0 15px;
+        }
+        nav ul li a {
+            color: var(--primary-color);
+            text-decoration: none;
+            font-weight: bold;
+        }
+        .animated-section {
+            padding: 50px;
+            text-align: center;
+            background: var(--card-bg);
+            margin: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+        }
+        .project-list {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .project-card {
+            background: var(--card-bg);
+            padding: 20px;
+            margin: 10px;
+            border-radius: 8px;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+            width: 80%;
+            text-align: center;
+        }
+        .social-links a {
+            font-size: 30px;
+            margin: 10px;
+            color: var(--primary-color);
+            text-decoration: none;
+        }
+        footer {
+            text-align: center;
+            padding: 20px;
+            background: var(--card-bg);
+            color: var(--text-color);
+        }
+    </style>
 </head>
 <body>
     <header>
         <h1>Maheshwaran M</h1>
         <nav>
             <ul>
-                <li><a href="#home">Home</a></li>
-                <li><a href="#projects">Projects</a></li>
-                <li><a href="#experience">Experience</a></li>
-                <li><a href="#certifications">Certifications</a></li>
-                <li><a href="#blog">Blog</a></li>
-                <li><a href="#contact">Contact</a></li>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="projects.html">Projects</a></li>
+                <li><a href="certifications.html">Certifications</a></li>
+                <li><a href="blog.html">Blog</a></li>
+                <li><a href="index.html#contact">Contact</a></li>
             </ul>
         </nav>
+        
     </header>
     
     <section id="home" class="animated-section">
@@ -28,28 +96,11 @@
         <p>Passionate Mobile & Web App Developer specializing in Flutter, Firebase, and Java.</p>
     </section>
     
-    <section id="projects" class="animated-section">
-        <h2>Projects</h2>
-        <div class="project-list">
-            <div class="project-card">Project 1</div>
-            <div class="project-card">Project 2</div>
-        </div>
-    </section>
-    
     <section id="experience" class="animated-section">
         <h2>Experience</h2>
         <p>Details about internships and work experience.</p>
     </section>
-    
-    <section id="certifications" class="animated-section">
-        <h2>Certifications</h2>
-        <p>List of certifications with verification links.</p>
-    </section>
-    
-    <section id="blog" class="animated-section">
-        <h2>Blog</h2>
-        <p>Tech insights and learning experiences.</p>
-    </section>
+
     
     <section id="contact" class="animated-section">
         <h2>Contact</h2>

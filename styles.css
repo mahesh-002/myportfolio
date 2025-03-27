@@ -3,12 +3,13 @@ body {
     margin: 0;
     padding: 0;
     background-color: #f4f4f4;
+    color: #333;
 }
 
 header {
     background: #222;
     color: white;
-    padding: 10px 20px;
+    padding: 15px;
     text-align: center;
 }
 
@@ -19,7 +20,7 @@ nav ul {
 
 nav ul li {
     display: inline;
-    margin: 0 15px;
+    margin: 0 10px;
 }
 
 nav ul li a {
@@ -27,21 +28,69 @@ nav ul li a {
     text-decoration: none;
 }
 
-.animated-section {
-    padding: 50px;
-    text-align: center;
-}
-
-.social-links a {
-    font-size: 30px;
-    margin: 10px;
-    color: #222;
-    text-decoration: none;
-}
-
-footer {
-    text-align: center;
+section {
     padding: 20px;
-    background: #222;
+    margin: 10px;
+    background: white;
+    border-radius: 8px;
+}
+
+.project-box, .certificate-box {
+    padding: 15px;
+    border: 1px solid #ccc;
+    margin: 10px 0;
+    border-radius: 5px;
+}
+
+button {
+    padding: 10px;
+    background: #007bff;
     color: white;
+    border: none;
+    cursor: pointer;
+}
+
+button:hover {
+    background: #0056b3;
+}
+
+/* Dark Mode */
+.dark-mode {
+    background-color: #1e1e1e;
+    color: white;
+}
+
+.dark-mode a {
+    color: #0a84ff;
+}
+
+/* Certificates and Projects Styling */
+.certificate-container, .project-box {
+    padding: 15px;
+    border: 1px solid #ccc;
+    margin: 10px 0;
+    border-radius: 5px;
+    background: #fff;
+}
+
+button {
+    padding: 10px;
+    background: #007bff;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+button:hover {
+    background: #0056b3;
+}
+
+/* Dark Mode */
+.dark-mode {
+    background-color: #1e1e1e;
+    color: white;
+}
+
+.dark-mode a {
+    color: #0a84ff;
 }
