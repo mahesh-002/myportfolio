@@ -3,7 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Certifications | Maheshwaran M</title><link rel="stylesheet" href="styles.css">
+    <title>Certifications | Maheshwaran M</title>
+    <link rel="stylesheet" href="styles.css">
     <script defer src="script.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
@@ -19,10 +20,10 @@
             color: var(--text-color);
             margin: 0;
             padding: 0;
+            overflow-x: hidden;
         }
-        header {
+        header, footer {
             background: var(--card-bg);
-            color: var(--text-color);
             padding: 15px;
             text-align: center;
         }
@@ -38,40 +39,77 @@
             color: var(--primary-color);
             text-decoration: none;
             font-weight: bold;
+            transition: color 0.3s;
+        }
+        nav ul li a:hover {
+            color: #2ab865;
         }
         .animated-section {
-            padding: 50px;
-            text-align: center;
+            padding: 30px;
             background: var(--card-bg);
-            margin: 20px;
+            margin: 20px auto;
             border-radius: 10px;
             box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+            max-width: 800px;
+            text-align: center;
+            opacity: 0;
+            transform: translateY(20px);
+            animation: fadeInUp 1s ease-in-out forwards;
         }
-        .project-list {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
-        .project-card {
+        .certificate-card {
             background: var(--card-bg);
             padding: 20px;
-            margin: 10px;
+            margin: 15px 0;
             border-radius: 8px;
             box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
-            width: 80%;
             text-align: center;
+            opacity: 0;
+            transform: translateX(-50px);
+            animation: slideIn 0.8s ease-in-out forwards;
+        }
+        .certificate-card h3 {
+            margin-bottom: 5px;
+        }
+        .issued-info {
+            font-size: 14px;
+            color: #B0B0B0;
+            margin-bottom: 10px;
+        }
+        .view-btn {
+            display: inline-block;
+            margin-top: 10px;
+            padding: 10px 15px;
+            background: var(--primary-color);
+            color: #121212;
+            text-decoration: none;
+            font-weight: bold;
+            border-radius: 5px;
+            transition: transform 0.3s, background 0.3s;
+        }
+        .view-btn:hover {
+            background: #2ab865;
+            transform: scale(1.1);
         }
         .social-links a {
-            font-size: 30px;
+            font-size: 25px;
             margin: 10px;
             color: var(--primary-color);
-            text-decoration: none;
+            transition: transform 0.3s;
         }
-        footer {
-            text-align: center;
-            padding: 20px;
-            background: var(--card-bg);
-            color: var(--text-color);
+        .social-links a:hover {
+            transform: rotate(10deg) scale(1.2);
+        }
+        @keyframes fadeInUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        @keyframes slideIn {
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
         }
     </style>
 </head>
@@ -79,38 +117,41 @@
     <header>
         <h1>Maheshwaran M</h1>
         <nav>
-    <ul>
-        <li><a href="index.html">Home</a></li> 
-        <li><a href="projects.html">Projects</a></li>
-        <li><a href="certifications.html">Certifications</a></li>
-        <li><a href="index.html#contact">Contact</a></li>
-    </ul>
-</nav>
+            <ul>
+                <li><a href="index.html">Home</a></li> 
+                <li><a href="projects.html">Projects</a></li>
+                <li><a href="certifications.html">Certifications</a></li>
+            </ul>
+        </nav>
     </header>
     
     <section id="certifications" class="animated-section">
         <h2>Certifications</h2>
-        <div class="project-list">
-            <div class="project-card">
-                <h3>Create a WordPress website with Hostinger</h3>
-                <h2>Issued Dec 2023 <br> Credential ID UC-cc849133-c248-495b-bfd6-cf6fa4d92203</h2>
-                <p>Issued by Udemy</p>
-                <a href="https://www.udemy.com/certificate/UC-cc849133-c248-495b-bfd6-cf6fa4d92203/" target="_blank">View Certificate</a>
+        <div class="certificate-card" style="animation-delay: 0.3s;">
+            <h3>Create a WordPress website with Hostinger</h3>
+            <p class="issued-info">Issued by Udemy | Dec 2023</p>
+            <a href="https://www.udemy.com/certificate/UC-cc849133-c248-495b-bfd6-cf6fa4d92203/" target="_blank" class="view-btn">View Certificate</a>
+        </div>
+        <div class="certificate-card" style="animation-delay: 0.6s;">
+            <h3>Angular</h3>
+            <p class="issued-info">Issued by Infosys | Oct 2022</p>
+            <a href="https://drive.google.com/file/d/1GoRARzQkVb5O2ov8PA4yPcI1AMR6B-we/view?usp=drivesdk" target="_blank" class="view-btn">View Certificate</a>
+        </div>
     </section>
     
+    <section id="contact" class="animated-section">
+        <h2>Contact</h2>
+        <div class="social-links">
+            <a href="https://www.github.com/mahesh-002" target="_blank"><i class="fab fa-github"></i></a>
+            <a href="https://www.linkedin.com/in/maheshwaran002" target="_blank"><i class="fab fa-linkedin"></i></a>
+            <a href="https://www.instagram.com/maheshwaran_in" target="_blank"><i class="fab fa-instagram"></i></a>
+            <a href="https://wa.me/917871939594" target="_blank"><i class="fab fa-whatsapp"></i></a>
+            <a href="mailto:dmmahesh002@outlook.com"><i class="fas fa-envelope"></i></a>
+        </div>
+    </section>
     
-<section id="contact" class="animated-section">
-    <h2>Contact</h2>
-    <div class="social-links">
-        <a href="https://www.github.com/mahesh-002" target="_blank"><i class="fab fa-github"></i></a>
-        <a href="https://www.linkedin.com/in/maheshwaran002" target="_blank"><i class="fab fa-linkedin"></i></a>
-        <a href="https://www.instagram.com/maheshwaran_in" target="_blank"><i class="fab fa-instagram"></i></a>
-        <a href="https://wa.me/917871939594" target="_blank"><i class="fab fa-whatsapp"></i></a>
-        <a href="mailto:dmmahesh002@outlook.com"><i class="fas fa-envelope"></i></a>
-    </div>
-</section>
-<footer>
-    <p>&copy; 2025 Maheshwaran M. All Rights Reserved.</p>
-</footer>
+    <footer>
+        <p>&copy; 2025 Maheshwaran M. All Rights Reserved.</p>
+    </footer>
 </body>
 </html>

@@ -13,6 +13,7 @@
             --background-color: #121212;
             --text-color: #E0E0E0;
             --card-bg: #1E1E1E;
+            --hover-color: #2ECC71;
         }
         body {
             font-family: 'Roboto', sans-serif;
@@ -39,6 +40,10 @@
             color: var(--primary-color);
             text-decoration: none;
             font-weight: bold;
+            transition: color 0.3s ease;
+        }
+        nav ul li a:hover {
+            color: var(--hover-color);
         }
         .animated-section {
             padding: 50px;
@@ -47,6 +52,7 @@
             margin: 20px;
             border-radius: 10px;
             box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+            animation: fadeIn 1s ease-in-out;
         }
         .project-list {
             display: flex;
@@ -56,75 +62,99 @@
         .project-card {
             background: var(--card-bg);
             padding: 20px;
-            margin: 10px;
+            margin: 15px;
             border-radius: 8px;
             box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
             width: 80%;
             text-align: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            opacity: 0;
+            transform: translateY(20px);
+            animation: slideIn 0.8s ease-out forwards;
+        }
+        .project-card:hover {
+            transform: scale(1.05);
+            box-shadow: 0px 6px 15px rgba(0, 255, 127, 0.5);
         }
         .social-links a {
             font-size: 30px;
             margin: 10px;
             color: var(--primary-color);
             text-decoration: none;
+            transition: transform 0.3s ease, color 0.3s ease;
         }
-        footer {
-            text-align: center;
-            padding: 20px;
-            background: var(--card-bg);
-            color: var(--text-color);
+        .social-links a:hover {
+            transform: scale(1.2) rotate(10deg);
+            color: var(--hover-color);
+        }
+        .view-btn {
+            display: inline-block;
+            margin-top: 10px;
+            padding: 10px 15px;
+            background: var(--primary-color);
+            color: #121212;
+            text-decoration: none;
+            font-weight: bold;
+            border-radius: 5px;
+            transition: background 0.3s ease-in-out, transform 0.2s ease;
+        }
+        .view-btn:hover {
+            background: #2ab865;
+            transform: scale(1.1);
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(-20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        @keyframes slideIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
         }
     </style>
 </head>
 <body>
-
     <header>
         <h1>My Projects</h1>
         <nav>
-    <ul>
-        <li><a href="index.html">Home</a></li> 
-        <li><a href="projects.html">Projects</a></li>
-        <li><a href="certifications.html">Certifications</a></li>
-        <li><a href="index.html#contact">Contact</a></li>
-    </ul>
-</nav>
+            <ul>
+                <li><a href="index.html">Home</a></li> 
+                <li><a href="projects.html">Projects</a></li>
+                <li><a href="certifications.html">Certifications</a></li>
+            </ul>
+        </nav>
     </header>
 
-    
-<section id="projects" class="animated-section">
-    <h2>Projects</h2>
-    <div class="project-list">
-        <h3>Personal Projects</h3>
-        <ul>
-            <li><a href="https://github.com/mahesh-002/Hospital-Management.git" target="_blank">Hospital Management System</a></li>
-            <li><a href="https://github.com/mahesh-002/Ecommerce-website.git" target="_blank">E-commerce Web App</a></li>
-        </ul>
+    <section id="projects" class="animated-section">
+        <h2>Projects</h2>
+        <div class="project-list">
+            <h3>Personal Projects</h3>
+            <div class="project-card">
+                <h3>Hospital Management Web App</h3>
+                <a href="https://github.com/mahesh-002/Hospital-Management.git" target="_blank" class="view-btn">View</a>
+            </div>
+            <div class="project-card">
+                <h3>E-commerce Web App</h3>
+                <a href="https://github.com/mahesh-002/Ecommerce-website.git" target="_blank" class="view-btn">View</a>
+            </div>
 
-        <h3>Completed Websites for Real-Time Industries</h3>
-        <ul>
-            <li><a href="https://ohmshield.com/" target="_blank">Ohm Shield</a></li>
-            <li><a href="https://www.ohmshield-esdcertificate.in/home" target="_blank">Ohm Shield ESD Certificate</a></li>
-            <li><a href="https://proesd.in/" target="_blank">Pro ESD</a></li>
-        </ul>
+            <h3>Real-Time Industry Projects (Paid Work)</h3>
+            <div class="project-card">
+                <h3>Ohm Shield (Website)</h3>
+                <a href="https://ohmshield.com/" target="_blank" class="view-btn">View</a>
+            </div>
+            <div class="project-card">
+                <h3>Ohm Shield ESD Certificate (Website)</h3>
+                <a href="https://www.ohmshield-esdcertificate.in/home" target="_blank" class="view-btn">View</a>
+            </div>
+            <div class="project-card">
+                <h3>Pro ESD (Website)</h3>
+                <a href="https://proesd.in/" target="_blank" class="view-btn">View</a>
+            </div>
+        </div>
+    </section>
 
-        <h3>Android Projects</h3>
-        <p>Ongoing...</p>
-    </div>
-</section>
-
-<section id="contact" class="animated-section">
-    <h2>Contact</h2>
-    <div class="social-links">
-        <a href="https://www.github.com/mahesh-002" target="_blank"><i class="fab fa-github"></i></a>
-        <a href="https://www.linkedin.com/in/maheshwaran002" target="_blank"><i class="fab fa-linkedin"></i></a>
-        <a href="https://www.instagram.com/maheshwaran_in" target="_blank"><i class="fab fa-instagram"></i></a>
-        <a href="https://wa.me/917871939594" target="_blank"><i class="fab fa-whatsapp"></i></a>
-        <a href="mailto:dmmahesh002@outlook.com"><i class="fas fa-envelope"></i></a>
-    </div>
-</section>
-<footer>
-    <p>&copy; 2025 Maheshwaran M. All Rights Reserved.</p>
-</footer>
-
+    <footer>
+        <p>&copy; 2025 Maheshwaran M. All Rights Reserved.</p>
+    </footer>
 </body>
 </html>
