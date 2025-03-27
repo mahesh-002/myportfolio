@@ -94,3 +94,40 @@ button:hover {
 .dark-mode a {
     color: #0a84ff;
 }
+
+/* Smooth fade-in for sections */
+.animated-section {
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeInUp 1s ease-out forwards;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Navbar hover effect */
+nav ul li a {
+    transition: color 0.3s ease-in-out;
+}
+
+nav ul li a:hover {
+    color: #ff5733;
+    text-decoration: underline;
+}
+
+/* Social icons hover animation */
+.social-links a {
+    transition: transform 0.3s ease-in-out;
+}
+
+.social-links a:hover {
+    transform: scale(1.2);
+}

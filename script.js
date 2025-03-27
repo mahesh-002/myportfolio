@@ -44,3 +44,17 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     }
 });
+
+document.addEventListener("DOMContentLoaded", () => {
+    const animatedSections = document.querySelectorAll(".animated-section");
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add("fadeInUp");
+            }
+        });
+    }, { threshold: 0.1 });
+
+    animatedSections.forEach(section => observer.observe(section));
+});
