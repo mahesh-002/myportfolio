@@ -4,115 +4,205 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Maheshwaran M | Portfolio</title>
-    <link rel="stylesheet" href="styles.css">
-    <script defer src="script.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
+        /* Root Variables */
         :root {
             --primary-color: #3DDC84;
             --background-color: #121212;
             --text-color: #E0E0E0;
             --card-bg: #1E1E1E;
+            --shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
         }
-        body {
-            font-family: 'Roboto', sans-serif;
-            background-color: var(--background-color);
-            color: var(--text-color);
+
+        /* Global Styles */
+        * {
             margin: 0;
             padding: 0;
+            box-sizing: border-box;
+            font-family: 'Roboto', sans-serif;
+            scroll-behavior: smooth;
         }
+
+        body {
+            background-color: var(--background-color);
+            color: var(--text-color);
+            padding: 20px;
+        }
+
+        /* Header */
         header {
             background: var(--card-bg);
-            color: var(--text-color);
             padding: 15px;
             text-align: center;
+            box-shadow: var(--shadow);
+            animation: fadeInDown 1s ease-in-out;
         }
-        nav ul {
-            list-style: none;
-            padding: 0;
-        }
-        nav ul li {
-            display: inline;
-            margin: 0 15px;
-        }
-        nav ul li a {
-            color: var(--primary-color);
-            text-decoration: none;
-            font-weight: bold;
-        }
-        .animated-section {
-            padding: 50px;
-            text-align: center;
+
+        /* Section Styling */
+        .section {
+            max-width: 800px;
+            margin: 50px auto;
+            padding: 30px;
             background: var(--card-bg);
-            margin: 20px;
             border-radius: 10px;
-            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+            box-shadow: var(--shadow);
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 1s ease-out, transform 1s ease-out;
+            text-align: left;
         }
-        .project-list {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
+
+        .section.visible {
+            opacity: 1;
+            transform: translateY(0);
         }
-        .project-card {
-            background: var(--card-bg);
-            padding: 20px;
-            margin: 10px;
-            border-radius: 8px;
-            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
-            width: 80%;
+
+        /* Centered Section Titles */
+        .section h2 {
             text-align: center;
+            margin-bottom: 20px;
+            color: var(--primary-color);
         }
+
+        /* About Me Photo */
+        .profile-photo {
+            display: block;
+            width: 120px;
+            height: 150px;
+            border-radius: 10px;
+            object-fit: cover;
+            margin: 0 auto 20px;
+            box-shadow: var(--shadow);
+        }
+
+        /* Social Links */
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 10px;
+        }
+
         .social-links a {
             font-size: 30px;
-            margin: 10px;
             color: var(--primary-color);
-            text-decoration: none;
+            transition: transform 0.3s ease-in-out, color 0.3s;
         }
+
+        .social-links a:hover {
+            transform: scale(1.2);
+            color: white;
+        }
+
+        /* Footer */
         footer {
-            text-align: center;
             padding: 20px;
             background: var(--card-bg);
-            color: var(--text-color);
+            text-align: center;
+            box-shadow: var(--shadow);
+            animation: fadeInUp 1s ease-in-out;
+        }
+
+        /* Animations */
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
     </style>
 </head>
 <body>
+
+    <!-- Header -->
     <header>
-        <h1>Maheshwaran M</h1>
+        <h1>My Projects</h1>
         <nav>
-    <ul>
-        <li><a href="index.html">Home</a></li> 
-        <li><a href="projects.html">Projects</a></li>
-        <li><a href="certifications.html">Certifications</a></li>
-    </ul>
-</nav>
-        
+            <ul>
+                <li><a href="index.html">Home</a></li> 
+                <li><a href="projects.html">Projects</a></li>
+                <li><a href="certifications.html">Certifications</a></li>
+            </ul>
+        </nav>
     </header>
-    
-    <section id="home" class="animated-section">
+
+    <!-- About Me Section -->
+    <section id="about" class="section">
         <h2>About Me</h2>
-        <p>Passionate Mobile & Web App Developer specializing in Flutter, Firebase, and Java.</p>
-    </section>
-    
-    <section id="experience" class="animated-section">
-        <h2>Experience</h2>
-        <p>Details about internships and work experience.</p>
+        <img class="profile-photo" src="####" alt="Profile Photo">
+        <p><strong>Full Name:</strong> Maheshwaran M</p>
+        <p><strong>Contact:</strong> +91 78719 39594</p>
+        <p><strong>Email:</strong> dmmahesh002@outlook.com</p>
+        <p><strong>Objective:</strong> Passionate Mobile & Web App Developer with expertise in Flutter, Firebase, and Java.</p>
     </section>
 
-    
-    <section id="contact" class="animated-section">
-    <h2>Contact</h2>
-    <div class="social-links">
-        <a href="https://www.github.com/mahesh-002" target="_blank"><i class="fab fa-github"></i></a>
-        <a href="https://www.linkedin.com/in/maheshwaran002" target="_blank"><i class="fab fa-linkedin"></i></a>
-        <a href="https://www.instagram.com/maheshwaran_in" target="_blank"><i class="fab fa-instagram"></i></a>
-        <a href="https://wa.me/917871939594" target="_blank"><i class="fab fa-whatsapp"></i></a>
-        <a href="mailto:dmmahesh002@outlook.com"><i class="fas fa-envelope"></i></a>
-    </div>
-</section>
-    
+    <!-- Education Section -->
+    <section id="education" class="section">
+        <h2>Education</h2>
+        <p><strong>B.Tech in Information Technology</strong> - Tagore Engineering College, Chennai</p>
+        <p><strong>HSC</strong> - Saraswathi Vidyalaya, Muthupet</p>
+        <p><strong>SSLC</strong> - Victory Matriculation, Panchanathikulam</p>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="section">
+        <h2>Technical Skills</h2>
+        <p>• Dart | Flutter (Android, iOS)<br>• HTML, CSS, JavaScript (Basics)<br>• MySQL, Firebase</p>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="section">
+        <h2>Contact</h2>
+        <div class="social-links">
+            <a href="https://www.github.com/mahesh-002" target="_blank"><i class="fab fa-github"></i></a>
+            <a href="https://www.linkedin.com/in/maheshwaran002" target="_blank"><i class="fab fa-linkedin"></i></a>
+            <a href="https://www.instagram.com/maheshwaran_in" target="_blank"><i class="fab fa-instagram"></i></a>
+            <a href="https://wa.me/917871939594" target="_blank"><i class="fab fa-whatsapp"></i></a>
+            <a href="mailto:dmmahesh002@outlook.com"><i class="fas fa-envelope"></i></a>
+        </div>
+    </section>
+
+    <!-- Footer -->
     <footer>
         <p>&copy; 2025 Maheshwaran M. All Rights Reserved.</p>
     </footer>
+
+    <!-- Scroll Animation -->
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const sections = document.querySelectorAll(".section");
+
+            function revealOnScroll() {
+                sections.forEach((section) => {
+                    const sectionTop = section.getBoundingClientRect().top;
+                    const windowHeight = window.innerHeight;
+
+                    if (sectionTop < windowHeight - 50) {
+                        section.classList.add("visible");
+                    }
+                });
+            }
+
+            window.addEventListener("scroll", revealOnScroll);
+            revealOnScroll();
+        });
+    </script>
+
 </body>
 </html>
